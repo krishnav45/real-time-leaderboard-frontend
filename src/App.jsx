@@ -10,8 +10,9 @@ function App() {
   const [topN, setTopN] = useState(5);
 
   useEffect(() => {
-    socketRef.current = io("https://real-time-leaderboard-b1mm.onrender.com", {
-      transports: ["websocket"] // critical fix to avoid polling CORS
+    socketRef.current = io("https://real-time-leaderboard-backend-e3zv.onrender.com", {
+      transports: ["websocket"], // ✅ Force WebSocket transport only
+      withCredentials: true       // ✅ Allow credentials like cookies if needed
     });
 
     const socket = socketRef.current;
@@ -66,6 +67,7 @@ function App() {
             <option>USA</option>
             <option>Russia</option>
             <option>UK</option>
+            <option>Dubai</option>
           </select>
         </label>
         <label>
