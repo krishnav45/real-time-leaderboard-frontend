@@ -12,7 +12,7 @@ function App() {
 
   // Connect socket once
   useEffect(() => {
-    socketRef.current = io("http://localhost:3000"); // use your render URL when deploying
+    socketRef.current = io("https://real-time-leaderboard-b1mm.onrender.com"); // use your render URL when deploying
     const socket = socketRef.current;
 
     console.log("🧪 Trying to connect to backend...");
